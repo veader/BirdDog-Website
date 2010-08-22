@@ -6,6 +6,7 @@
       body { background-color:#FFF; font-size:14px; font-family:Verdana, sans-serif; }
       #wrapper { margin:0 auto; width:650px; background-color:#FFF;position:relative; }
       #status_bar { background-color:#222; height:20px; color:#EEE; padding:0px 15px; font-size:10px; font-weight:bold; line-height:20px; text-align:right; }
+      #status_bar a { color:#EEE;text-decoration:none; }
       #header { background:#000 url('images/header_bg.png') repeat-x; height:175px; position:relative; }
       #header #dog_head { position:absolute; top:12px; left:0px; }
       #header h1 { font-size:40px; color:#FFF; position:absolute; top:20px; left:325px;  }
@@ -16,7 +17,8 @@
       #content { min-height:500px; }
       #content ul { margin:10px 0px 10px 20px; }
       #content li { margin:15px 5px;color:#666; }
-      #content #app_store { margin:0 auto; text-align:center; }
+      #content #app_store { position:relative; margin:0 auto; text-align:center; padding-top:5px; height:100px; }
+      #content #app_store #soon { position:absolute; top:0; left:70px; }
       #footer { clear:both; background-color:#FFC; }
       
       .left { float:left; width:45%; margin:10px 5px 10px 25px; }
@@ -25,7 +27,7 @@
   <body>
     <div id="wrapper">
       <div id="status_bar">
-        <p>V8 LOGIC</p>
+        <p><a href="http://v8logic.com">V8 LOGIC</a></p>
       </div>
       <div id="header">
         <div id="dog_head"><img src="images/doghead.png" /></div>
@@ -59,6 +61,7 @@
           <br />
           <div id="app_store">
             <img src="images/appstore.png" alt="Available on the App Store" />
+            <img src="images/soon.png" alt="" id="soon" style="width:50%;" />
           </div>
         </div>
       </div>
