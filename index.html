@@ -15,13 +15,21 @@
       #sub_header { background-color:#999; height:60px; }
       #sub_header h3 { margin:0px; color:#EEE; font-weight:normal; }
       #content { min-height:500px; }
+      #content a { color:#666; }
+      #content a:hover { text-decoration:none; }
       #content ul { margin:10px 0px 10px 20px; }
       #content li { margin:15px 5px;color:#666; }
+      #content h4 { color:#444; }
+      #content #screenshots { clear:both; height:50px; padding:20px; }
       #content #app_store { position:relative; margin:0 auto; text-align:center; padding-top:5px; height:100px; }
       #content #app_store #soon { position:absolute; top:0; left:70px; }
-      #footer { clear:both; background-color:#FFC; }
+      #content #thanks { border:1px solid #CCC; background-color:#DDD; padding:20px; width:80%; }
+      #footer { clear:both; border:1px solid #EEB; border-bottom:0px; background-color:#FFC; height:20px; }
+      #footer p { padding:1px 10px; font-size:12px; line-height:18px; }
+      #footer a { text-decoration:none; color:#222; }
       
-      .left { float:left; width:45%; margin:10px 5px 10px 25px; }
+      .left  { float:left; width:45%; margin:10px 5px 10px 25px; }
+      .right { float:left; width:45%; margin-left:10px; padding:10px 0px 10px 10px; }
     </style>
   </head>
   <body>
@@ -49,7 +57,7 @@
           <p>
             BirdDog is a lightweight utility designed to remotely
             view of your servers and applications being monitored
-            by Scout.
+            by <a href="http://scoutapp.com">Scout</a>.
           </p>
           <ul>
             <li>Track server health including uptime and alert status</li>
@@ -63,11 +71,49 @@
             <img src="images/appstore.png" alt="Available on the App Store" />
             <img src="images/soon.png" alt="" id="soon" style="width:50%;" />
           </div>
+
+          <h4>Requirements</h4>
+          <ul>
+            <li>iPhone or iPod Touch running iOS 4</li>
+            <li><a href="http://scoutapp.com">Scout</a> account</li>
+          </ul>
+        </div>
+        <div id="screenshots">
+          <h2 style="text-align:center;color:#CCC;">Screenshots Here</h2>
+        </div>
+        <div class="left">
+          <h4>Features</h4>
+          <ul>
+            <li>Some</li>
+            <li>More</li>
+            <li>Features</li>
+            <li>Here</li>
+          </ul>
+        </div>
+        <div class="right">
+          <div id="thanks">
+            <p>
+              <a href="http://scoutapp.com">
+                <img src="images/scout_logo.png" alt="Scout" style="width:150px;" />
+              </a>
+              <br />
+              Powered by <a href="http://scoutapp.com">Scout</a>
+            </p>
+            <br />
+
+            <p>
+              <a href="http://andrewreifman.com">
+                <img src="images/ar_logo.png" alt="Andrew Reifman" style="width:50px;" />
+              </a>
+              <br />
+              Icon design by <a href="http://andrewreifman.com">Andrew Reifman</a>
+            </p>
+          </div>
         </div>
       </div>
       <div id="footer">
         <p>
-          &copy; 2010 V8 Logic
+          &copy; 2010 <a href="http://v8logic.com">V8 Logic</a>
         </p>
       </div>
     </div>
