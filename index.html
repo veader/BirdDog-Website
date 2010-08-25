@@ -3,6 +3,7 @@
   <head>
     <title>BirdDog App : Scout Monitoring on the Go</title>
     <meta name="viewport" content="width=650, user-scalable=yes">
+    <script type="text/javascript" src="jquery-1.4.2.min.js"></script>
     <style>
       * { margin:0;padding:0; }
       body { background-color:#FFF; font-size:14px; font-family:Verdana, sans-serif; }
@@ -14,15 +15,21 @@
       #header h1 { font-size:40px; color:#FFF; position:absolute; top:20px; left:325px;  }
       #header h2 { font-size:20px; color:#999; font-weight:normal; position:absolute; top:85px; left:325px; }
       #iphone { position:absolute; top:150px; left:350px; width:250px; }
+      #screenshot_window { margin:0; padding:0; position:absolute; top:101px; left:21px; width:211px; height:303px; }
+      #screenshot_window img { margin:0; padding:0; width:211px; }
       #sub_header { background-color:#999; height:60px; }
       #sub_header h3 { margin:0px; color:#EEE; font-weight:normal; }
-      #content { min-height:500px; }
+      #content { min-height:420px; }
       #content a { color:#666; }
       #content a:hover { text-decoration:none; }
       #content ul { margin:25px 0px 10px 0px; }
       #content li { margin:15px 5px 15px 0px; color:#666; }
       #content h4 { color:#444; }
-      #content #screenshots { clear:both; height:50px; padding:20px; }
+      #screenshots { clear:both; padding:20px 0px; margin-bottom:5px; border:1px solid #E0E0E0; background:#EFEFEF; }
+      #screenshots ul, #screenshots li { list-style:none; margin:0; padding:0; }
+      #screenshots a { float:left; margin-left:34px; display:block; border:10px solid #BBB; }
+      #screenshots a.active_screenshot, #screenshots a.active_screenshot:hover { border:7px solid #444; margin:3px; margin-left:37px; }
+      #screenshots a:hover  { border:7px solid #999; margin:3px; margin-left:37px; }
       #content #app_store { position:relative; margin:0px; padding-top:5px; height:100px; }
       #content #app_store #soon { position:absolute; top:0; left:25px; }
       #required { clear:both; text-align:center; background-color:#FFC; border:1px solid #EEB; padding-top:4px; font-size:12px; }
@@ -39,27 +46,35 @@
       .huge_font { font-size:1.8em;vertical-align:middle; }
       .centered { text-align:center; }
     </style>
+    <script type="text/javascript">
+    function switchScreenshots(screen_name) {
+      $("a.active_screenshot").removeClass("active_screenshot");
+      $("#screen_" + screen_name).addClass("active_screenshot");
+      $("#screenshot_window").html("<img src='images/screen_" + screen_name + ".png' />")
+    }
+    </script>
   </head>
   <body>
     <div id="wrapper">
       <div id="status_bar">
         <p><a href="http://v8logic.com">V8 LOGIC</a></p>
-      </div>
+      </div> <!-- status_bar -->
       <div id="header">
         <div id="dog_head"><img src="images/doghead.png" /></div>
         <h1><img src="images/birddog_title.png" alt="BIRD DOG" /></h1>
         <h2>Scout Monitoring on the Go</h2>
-      </div>
+      </div> <!-- header -->
       <div id="iphone">
         <img src="images/iphone.png" alt="iPhone 4 running BirdDog" />
-      </div>
+        <div id="screenshot_window"> </div>
+      </div> <!-- iphone -->
       <div id="sub_header">
         <div class="left">
           <h3>
             Harness the power of Scout while away from your desk.
           </h3>
         </div>
-      </div>
+      </div> <!-- sub_header -->
       <div id="content">
         <div class="left">
           <br />
@@ -81,19 +96,41 @@
             <img src="images/appstore.png" alt="Available on the App Store" />
             <img src="images/soon.png" alt="" id="soon" style="width:50%;" />
           </div>
-        </div>
+        </div> <!-- class=left -->
         
-        <div id="screenshots">
-          <h2 style="text-align:center;font-size:2.0em;color:#DDD;">Screenshots Here</h3>
-        </div>
-      </div>
+      </div> <!-- content -->
+      <div id="screenshots">
+        <ul>
+          <li>
+            <a href="javascript:switchScreenshots('servers');" id="screen_servers" class="active_screenshot">
+              <img src="images/thumb_screen_servers.png" alt="Server View" />
+            </a>
+          </li>
+          <li>
+            <a href="javascript:switchScreenshots('alerts');" id="screen_alerts">
+              <img src="images/thumb_screen_alerts.png" alt="Alerts View" />
+            </a>
+          </li>
+          <li>
+            <a href="javascript:switchScreenshots('alert');" id="screen_alert">
+              <img src="images/thumb_screen_alert.png" alt="Alert Detail View" />
+            </a>
+          </li>
+          <li>
+            <a href="javascript:switchScreenshots('login');" id="screen_login">
+              <img src="images/thumb_screen_login.png" alt="Login View" />
+            </a>
+          </li>
+        </ul>
+        <div style="clear:both;"> </div>
+      </div> <!-- screenshots -->
       <div id="required">
         <p>
           <span class="huge_font">*</span>
           <strong>Requires</strong> an iPhone or iPod Touch running iOS 4
           and a <a href="http://scoutapp.com">Scout</a> account.
         </p>
-      </div>
+      </div> <!-- required -->
       <div id="footer">
         <p id="thanks" class="centered">
           App by <a href="http://v8logic.com">V8 Logic</a>
@@ -106,7 +143,7 @@
         <p>
           &copy; 2010 <a href="http://v8logic.com">V8 Logic</a>
         </p>
-      </div>
-    </div>
+      </div> <!-- footer -->
+    </div> <!-- wrapper -->
   </body>
 </html>
