@@ -19,7 +19,7 @@
       #screenshot_window img { margin:0; padding:0; width:211px; }
       #sub_header { background-color:#999; height:60px; }
       #sub_header h3 { margin:0px; color:#EEE; font-weight:normal; }
-      #content { min-height:420px; }
+      #content { position:relative; top:0; left:25px; min-height:420px; width:45%; }
       #content a { color:#666; }
       #content a:hover { text-decoration:none; }
       #content ul { margin:25px 0px 10px 0px; }
@@ -30,6 +30,7 @@
       #screenshots a { float:left; margin-left:34px; display:block; border:10px solid #BBB; }
       #screenshots a.active_screenshot, #screenshots a.active_screenshot:hover { border:7px solid #444; margin:3px; margin-left:37px; }
       #screenshots a:hover  { border:7px solid #999; margin:3px; margin-left:37px; }
+      #screenshots img { border:0px; }
       #content #app_store { position:relative; margin:0px; padding-top:5px; height:100px; }
       #content #app_store #soon { position:absolute; top:0; left:25px; }
       #required { clear:both; text-align:center; background-color:#FFC; border:1px solid #EEB; padding-top:4px; font-size:12px; }
@@ -41,7 +42,7 @@
       #thanks a { color:#AAA; }
       #footer #thanks a:hover { text-decoration:none; color:#666; }
       
-      .left  { float:left; width:45%; margin:10px 5px 10px 25px; }
+      .left  { float:left; width:40%; margin:10px 5px 10px 25px; }
       .right { float:left; width:45%; margin-left:10px; padding:10px 0px 10px 10px; }
       .huge_font { font-size:1.8em;vertical-align:middle; }
       .centered { text-align:center; }
@@ -76,28 +77,25 @@
         </div>
       </div> <!-- sub_header -->
       <div id="content">
-        <div class="left">
-          <br />
-          <p>
-            BirdDog is a lightweight utility designed to remotely
-            view of your servers and applications being monitored
-            by <a href="http://scoutapp.com">Scout</a>.
-          </p>
+        <br />
+        <p>
+          BirdDog is a lightweight utility designed to remotely
+          view of your servers and applications being monitored
+          by <a href="http://scoutapp.com">Scout</a>.
+        </p>
 
-          <ul>
-            <li>Track server health including uptime and alert status</li>
-            <li>Stay on top of active alerts for quick troubleshooting</li>
-            <li>Track problems of the day in an alert history</li>
-            <li>Diagnose issues with full alert details</li>
-          </ul>
+        <ul>
+          <li>Track server health including uptime and alert status</li>
+          <li>Stay on top of active alerts for quick troubleshooting</li>
+          <li>Track problems of the day in an alert history</li>
+          <li>Diagnose issues with full alert details</li>
+        </ul>
 
-          <br />
-          <div id="app_store">
-            <img src="images/appstore.png" alt="Available on the App Store" />
-            <img src="images/soon.png" alt="" id="soon" style="width:50%;" />
-          </div>
-        </div> <!-- class=left -->
-        
+        <br />
+        <div id="app_store">
+          <img src="images/appstore.png" alt="Available on the App Store" />
+          <img src="images/soon.png" alt="" id="soon" style="width:50%;" />
+        </div>
       </div> <!-- content -->
       <div id="screenshots">
         <ul>
