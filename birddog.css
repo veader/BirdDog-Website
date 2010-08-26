@@ -1,0 +1,41 @@
+* { margin:0;padding:0; }
+body { background-color:#FFF; font-size:14px; font-family:Verdana, sans-serif; }
+#wrapper { margin:0 auto; width:650px; background-color:#FFF; position:relative; }
+#status_bar { background-color:#222; height:20px; color:#EEE; padding:0px 15px; font-size:10px; font-weight:bold; line-height:20px; text-align:right; }
+#status_bar a { color:#EEE;text-decoration:none; }
+#header { background:#000 url('images/header_bg.png') repeat-x; height:175px; position:relative; }
+#header #dog_head { position:absolute; top:12px; left:0px; }
+#header h1 { font-size:40px; color:#FFF; position:absolute; top:20px; left:325px;  }
+#header h2 { font-size:20px; color:#999; font-weight:normal; position:absolute; top:85px; left:325px; }
+#iphone { position:absolute; top:150px; left:350px; width:250px; }
+#screenshot_window { margin:0; padding:0; position:absolute; top:101px; left:21px; width:211px; height:303px; }
+#screenshot_window img { margin:0; padding:0; width:211px; }
+#sub_header { background-color:#999; height:60px; }
+#sub_header h3 { margin:0px; color:#EEE; font-weight:normal; }
+#content { position:relative; top:0; left:25px; min-height:420px; width:45%; }
+#content a { color:#666; }
+#content a:hover { text-decoration:none; }
+#content ul { margin:25px 0px 10px 0px; }
+#content li { margin:15px 5px 15px 0px; color:#666; }
+#content h4 { color:#444; }
+#screenshots { clear:both; padding:20px 0px; margin-bottom:5px; border:1px solid #E0E0E0; background:#EFEFEF; }
+#screenshots ul, #screenshots li { list-style:none; margin:0; padding:0; }
+#screenshots a { float:left; margin-left:34px; display:block; border:10px solid #BBB; }
+#screenshots a.active_screenshot, #screenshots a.active_screenshot:hover { border:7px solid #444; margin:3px; margin-left:37px; }
+#screenshots a:hover  { border:7px solid #999; margin:3px; margin-left:37px; }
+#screenshots img { border:0px; }
+#content #app_store { position:relative; margin:0px; padding-top:5px; height:100px; }
+#content #app_store #soon { position:absolute; top:0; left:25px; }
+#required { clear:both; text-align:center; background-color:#FFC; border:1px solid #EEB; padding-top:4px; font-size:12px; }
+#required a, #footer a { color:#222; }
+#required a:hover, #footer a:hover { text-decoration:none; }
+#footer { height:20px; margin-top:5px; }
+#footer p { padding:1px 10px; font-size:13px; line-height:18px; }
+#thanks { color:#AAA; font-size:11px; }
+#thanks a { color:#AAA; }
+#footer #thanks a:hover { text-decoration:none; color:#666; }
+
+.left  { float:left; width:40%; margin:10px 5px 10px 25px; }
+.right { float:left; width:45%; margin-left:10px; padding:10px 0px 10px 10px; }
+.huge_font { font-size:1.8em;vertical-align:middle; }
+.centered { text-align:center; }
