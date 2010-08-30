@@ -26,7 +26,7 @@ body { background-color:#FFF; font-size:14px; font-family:Verdana, sans-serif; z
 #screenshots img { border:0px; }
 #content #app_store { position:relative; margin:0px; padding-top:5px; height:100px; }
 #content #app_store #soon { position:absolute; top:0; left:25px; }
-#required { clear:both; text-align:center; background-color:#FFC; border:1px solid #EEB; padding-top:4px; font-size:0.9em; }
+#required { clear:both; text-align:center; background-color:#FFC; border:1px solid #EEB; padding-top:4px; font-size:0.8em; }
 #required a, #footer a { color:#222; }
 #required a:hover, #footer a:hover { text-decoration:none; }
 #footer { height:20px; margin-top:5px; }
