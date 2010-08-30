@@ -1,15 +1,18 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
   <head>
-    <title>BirdDog App : Scout Monitoring on the Go</title>
+    <title>BirdDog App : Scout Monitoring on the Go : iPhone App</title>
     <meta name="viewport" content="width=650, user-scalable=yes">
     <link href="birddog.css" media="all" rel="stylesheet" type="text/css" />
     <script type="text/javascript" src="jquery-1.4.2.min.js"></script>
     <script type="text/javascript">
-    function switchScreenshots(screen_name) {
+    function switchScreenshots(screen_name, offset) {
       $("a.active_screenshot").removeClass("active_screenshot");
       $("#screen_" + screen_name).addClass("active_screenshot");
-      $("#screenshot_window").html("<img src='images/screen_" + screen_name + ".png' />")
+      var newOffset = (offset * -211) + 'px';
+      $("#screenshot_slider").animate(
+        { left: newOffset }, 400
+      );
     }
     </script>
     <script type="text/javascript">
@@ -36,7 +39,7 @@
       </div> <!-- header -->
       <div id="iphone">
         <img src="images/iphone.png" alt="iPhone 4 running BirdDog" />
-        <div id="screenshot_window"> </div>
+        <div id="screenshot_window"><img src="images/stiched_screens.png" alt="screenshots" id="screenshot_slider" /></div>
       </div> <!-- iphone -->
       <div id="sub_header">
         <div class="left">
@@ -69,22 +72,22 @@
       <div id="screenshots">
         <ul>
           <li>
-            <a href="javascript:switchScreenshots('servers');" id="screen_servers" class="active_screenshot">
+            <a href="javascript:switchScreenshots('servers', 0);" id="screen_servers" class="active_screenshot">
               <img src="images/thumb_screen_servers.png" alt="Server View" />
             </a>
           </li>
           <li>
-            <a href="javascript:switchScreenshots('alerts');" id="screen_alerts">
+            <a href="javascript:switchScreenshots('alerts', 1);" id="screen_alerts">
               <img src="images/thumb_screen_alerts.png" alt="Alerts View" />
             </a>
           </li>
           <li>
-            <a href="javascript:switchScreenshots('alert');" id="screen_alert">
+            <a href="javascript:switchScreenshots('alert', 2);" id="screen_alert">
               <img src="images/thumb_screen_alert.png" alt="Alert Detail View" />
             </a>
           </li>
           <li>
-            <a href="javascript:switchScreenshots('login');" id="screen_login">
+            <a href="javascript:switchScreenshots('login', 3);" id="screen_login">
               <img src="images/thumb_screen_login.png" alt="Login View" />
             </a>
           </li>
