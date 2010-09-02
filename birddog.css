@@ -1,8 +1,10 @@
 * { margin:0;padding:0; }
 body { background-color:#FFF; font-size:14px; font-family:Verdana, sans-serif; z-index:2; }
 #wrapper { margin:0 auto; width:650px; background-color:#FFF; position:relative; z-index:3; }
-#status_bar { background-color:#222; height:20px; color:#EEE; padding:0px 15px; font-size:10px; font-weight:bold; line-height:20px; text-align:right; }
+#status_bar { position:relative; background-color:#222; height:20px; color:#EEE; padding:0px 15px; font-size:10px; font-weight:bold; line-height:20px; text-align:left; }
 #status_bar a { color:#EEE;text-decoration:none; }
+#twitter { position:absolute; top:0; right:15px; }
+#twitter img { border:0; vertical-align:text-top; }
 #header { background:#000 url('images/header_bg.png') repeat-x; height:175px; position:relative; }
 #header #dog_head { position:absolute; top:12px; left:0px; }
 #header h1 { font-size:40px; color:#FFF; position:absolute; top:20px; left:325px;  }
