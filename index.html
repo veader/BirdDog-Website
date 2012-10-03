@@ -1,20 +1,65 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<!DOCTYPE html>
   <head>
-    <title>BirdDog App : Scout Monitoring on the Go : iPhone App</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>BirdDog : Scout Monitoring on the Go for iPhone</title>
+    <meta name="description" content="birddog">
     <meta name="viewport" content="width=650, user-scalable=yes">
-    <link href="birddog.css" media="all" rel="stylesheet" type="text/css" />
-    <script type="text/javascript" src="jquery-1.4.2.min.js"></script>
-    <script type="text/javascript">
-    function switchScreenshots(screen_name, offset) {
-      $("a.active_screenshot").removeClass("active_screenshot");
-      $("#screen_" + screen_name).addClass("active_screenshot");
-      var newOffset = (offset * -211) + 'px';
-      $("#screenshot_slider").animate(
-        { left: newOffset }, 400
-      );
-    }
-    </script>
+    <meta name="apple-itunes-app" content="app-id=359437429"/>
+
+    <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <style type="text/css" media="screen">
+      .content { width:650px;margin:0 auto;padding:20px 0 0 0; }
+      .dog-background { background-image:url('img/header_bg.png'); }
+      .hero-unit { padding:50px 10px 10px 20px;position:relative;height:120px; }
+      .footer { position:relative; }
+      .footer a { color:#666; }
+      hr { margin:10px 0; }
+      #iphone-screen {
+        position:relative;
+        margin-top:-140px;
+        margin-left:10px;
+        width:275px;
+        height:607px;
+        background-image:url('img/screen4s.png');
+      }
+      #screen {
+        position:absolute;
+        top:109px;
+        left:27px;
+        width:222px;
+        height:319px;
+        z-index:5; overflow:hidden;
+      }
+      #screen-slider { position:relative:top:0;left:0;height:320px;width:844px;z-index:-1; }
+      #doghead { width:233px;height:160px;position:absolute;left:0;top:20px; }
+      #features { margin-left:0;color:#666; }
+      #tag-line { margin-top:-5px;margin-bottom:0;color:#CCC; }
+      #app-desc { min-height:410px; }
+      #app-desc ul li { padding-bottom:10px; }
+      #app-store { width:160px;margin:0 auto; }
+      #required { background-color:#FFC;padding:8px 20px;text-align:center; }
+      #andrew { font-size:0.8em; }
+      #andrew a { color:#444; }
+      #follow { position:absolute;top:20px;right:20px;width:150px; }
+      #screenshots { width:610px; }
+      #screenshots ul.thumbnails { margin-bottom:0; }
+      #screenshots ul.thumbnails li {
+        margin:5px 12px 5px 28px;
+        border:4px solid #BBB;
+        width:100px;
+      }
+      #screenshots ul.thumbnails li.active-screenshot { border:4px solid #222; }
+
+      @media all and (-webkit-min-device-pixel-ratio: 2), all and (-moz-min-device-pixel-ratio: 1.5), all and (min-device-pixel-ratio: 2), all and (-o-min-device-pixel-ratio: 2/1) {
+        #iphone-screen {
+          background-size:275px 607px;
+          background-image:url('img/screen4s@2x.png');
+        }
+      }
+    </style>
+
     <script type="text/javascript">
       var _gaq = _gaq || [];
       _gaq.push(['_setAccount', 'UA-212382-10']);
@@ -28,102 +73,125 @@
     </script>
   </head>
   <body>
-    <div id="wrapper">
-      <div id="status_bar">
-        <p><a href="http://v8logic.com">V8 LOGIC</a></p>
-        <div id="twitter">
-          <p>
-            <a href="http://twitter.com/birddogapp">
-              FOLLOW ON
-              <img src="images/sml_twitter_logo.png" alt="Twitter" />
-            </a>
+    <div class="content">
+      <div class="hero-unit dog-background">
+        <img src="img/doghead.png" title="birddog" id="doghead" />
+      </div>
+
+      <div class="container" style="margin-top:-20px;">
+        <div class="span4" id="app-desc">
+          <h1>BirdDog</h1>
+          <h5 id="tag-line"><em>Scout monitoring on the go for iPhone</em></h5>
+          <br />
+          <p class="lead">
+            A lightweight utility designed to remotely
+            view your servers and applications being monitored
+            by <a href="http://scoutapp.com">Scout</a>.
           </p>
-        </div>
-      </div> <!-- status_bar -->
-      <div id="header">
-        <div id="dog_head"><img src="images/doghead.png" /></div>
-        <h1><img src="images/birddog_title.png" alt="BIRD DOG" /></h1>
-        <h2>Scout Monitoring on the Go</h2>
-      </div> <!-- header -->
-      <div id="iphone">
-        <img src="images/iphone.png" alt="iPhone 4 running BirdDog" />
-        <div id="screenshot_window"><img src="images/stiched_screens.png" alt="screenshots" id="screenshot_slider" /></div>
-      </div> <!-- iphone -->
-      <div id="sub_header">
-        <div class="left">
-          <h3>
-            Harness the power of Scout while away from your desk.
-          </h3>
-        </div>
-      </div> <!-- sub_header -->
-      <div id="content">
-        <br />
-        <p>
-          BirdDog is a lightweight utility designed to remotely
-          view your servers and applications being monitored
-          by <a href="http://scoutapp.com">Scout</a>.
-        </p>
+          <div id="app-store">
+            <a href="http://itunes.apple.com/us/app/birddog/id359437429?mt=8">
+              <img src="img/app_store.svg" id="app-store" alt="Available in the App Store" />
+            </a>
+          </div>
+          <hr />
 
-        <ul>
-          <li>Track server health including uptime and alert status</li>
-          <li>Stay on top of active alerts for quick troubleshooting</li>
-          <li>Track problems of the day in an alert history</li>
-          <li>Diagnose issues with full alert details</li>
-        </ul>
-
-        <br />
-        <div id="app_store">
-          <a href="http://itunes.apple.com/us/app/birddog/id359437429?mt=8">
-            <img src="images/appstore.png" alt="Available on the App Store" />
-          </a>
-          <!-- <img src="images/soon.png" alt="" id="soon" style="width:50%;" /> -->
+          <ul id="features">
+            <li>Track server health including uptime and alert status</li>
+            <li>Stay on top of active alerts for quick troubleshooting</li>
+            <li>Track problems of the day in an alert history</li>
+            <li>Diagnose issues with full alert details</li>
+          </ul>
         </div>
-      </div> <!-- content -->
-      <div id="screenshots">
-        <ul>
-          <li>
-            <a href="javascript:switchScreenshots('servers', 0);" id="screen_servers" class="active_screenshot">
-              <img src="images/thumb_screen_servers.png" alt="Server View" />
+
+        <div class="span4">
+          <a name="iphone"></a>
+          <div id="iphone-screen">
+            <img src="img/screen_servers.png" id="screen" />
+          </div>
+        </div> <!-- phone -->
+      </div>
+
+      <div id="screenshots" class="well row-fluid">
+        <ul class="thumbnails">
+          <li class="active-screenshot">
+            <a href="#iphone" onclick="swap_screen('servers');" id="screen_servers">
+              <img src="img/thumb_screen_servers.png" alt="Server View" />
             </a>
           </li>
           <li>
-            <a href="javascript:switchScreenshots('alerts', 1);" id="screen_alerts">
-              <img src="images/thumb_screen_alerts.png" alt="Alerts View" />
+            <a href="#iphone" onclick="swap_screen('alerts');" id="screen_alerts">
+              <img src="img/thumb_screen_alerts.png" alt="Alerts View" />
             </a>
           </li>
           <li>
-            <a href="javascript:switchScreenshots('alert', 2);" id="screen_alert">
-              <img src="images/thumb_screen_alert.png" alt="Alert Detail View" />
+            <a href="#iphone" onclick="swap_screen('alert');" id="screen_alert">
+              <img src="img/thumb_screen_alert.png" alt="Alert Detail View" />
             </a>
           </li>
           <li>
-            <a href="javascript:switchScreenshots('login', 3);" id="screen_login">
-              <img src="images/thumb_screen_login.png" alt="Login View" />
+            <a href="#iphone" onclick="swap_screen('login');" id="screen_login">
+              <img src="img/thumb_screen_login.png" alt="Login View" />
             </a>
           </li>
         </ul>
-        <div style="clear:both;"> </div>
-      </div> <!-- screenshots -->
-      <div id="required">
-        <p>
-          <span class="huge_font">*</span>
-          <strong>Requires</strong> an iPhone or iPod Touch running iOS 4
-          and a <a href="http://scoutapp.com">Scout</a> account.
-        </p>
-      </div> <!-- required -->
-      <div id="footer">
-        <p id="thanks" class="centered">
-          App by <a href="http://v8logic.com">V8 Logic</a>
-          &nbsp;|&nbsp;
-          Powered by <a href="http://scoutapp.com">Scout</a>
-          &nbsp;|&nbsp;
-          Icon by <a href="http://andrewreifman.com">Andrew Reifman</a>
-        </p>
-        <br />
-        <p>
-          &copy; 2010 <a href="http://v8logic.com">V8 Logic</a>
-        </p>
-      </div> <!-- footer -->
-    </div> <!-- wrapper -->
+      </div>
+
+      <div class="well" id="required">
+        An iPhone or iPod Touch running iOS 4+ and a
+        <a href="https://scoutapp.com/session/new">Scout account</a>
+        are <strong>required</strong>.
+      </div>
+      <br />
+
+      <p class="muted" id="andrew">
+        Powered by <a href="http://scoutapp.com">Scout</a>
+        &nbsp;&nbsp;|&nbsp;&nbsp;
+        Icon and other pixels by
+        <a href="http://andrewreifman.com">Andrew Reifman</a>
+      </p>
+
+      <div class="footer">
+        <div class="well">
+          &copy; 2010-2012 All Rights Reserved &raquo;
+          <a href="http://v8logic.com">V8 Logic</a>
+
+          <div id="follow">
+              <a href="https://twitter.com/birddogapp"
+                 class="twitter-follow-button"
+                 data-show-count="false"
+                 data-lang="en">Follow @birddogapp</a>
+            <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="http://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+          </div>
+        </div>
+      </div>
+      <br />
+    </div>
+
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script type="text/javascript" charset="utf-8">
+      var is_retina = window.devicePixelRatio > 1 ? true : false;
+      var reset_timer = null;
+      $(window).load(function() {
+        // $("#logo").attr("src", full_img_path("logo"));
+        $("#screen").attr("src", full_img_path("screen_servers"));
+        $.each(["servers", "alerts", "alert", "login"], function(idx, val) {
+          $("#screen_" + val + "").children().attr("src", full_img_path("screen_" + val));
+        });
+      });
+      function swap_screen(screen_name) {
+        $("li.active-screenshot").removeClass("active-screenshot");
+        $("#screen_" + screen_name).parent().addClass("active-screenshot");
+        $("#screen").attr("src", full_img_path("screen_" + screen_name));
+        return false;
+      }
+      function full_img_path(root_path) {
+        // root_path should be without img/ and .png
+        var img_path = "img/" + root_path;
+        if (is_retina) { img_path += "@2x"; }
+        img_path += ".png";
+        return img_path;
+      }
+    </script>
   </body>
 </html>
