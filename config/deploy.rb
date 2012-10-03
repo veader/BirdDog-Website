@@ -1,6 +1,6 @@
 set :application,   'birddog'
 set :scm,           'git'
-set :repository,    "git@code.veader.org:BirdDog_Website"
+set :repository,    "git@github.com:veader/BirdDog-Website.git"
 set :deploy_to,     "/var/www/#{application}"
 set :user,          'web'
 set :keep_releases, 3
